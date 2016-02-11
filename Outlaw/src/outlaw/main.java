@@ -14,8 +14,7 @@ public class main {
         
         Player user = new Player();
         user.setName(username);
-        user.printAllStats(user);
-        Map map1 = new Map();
+        Story storyline = new Story(user);
     }
     
 }

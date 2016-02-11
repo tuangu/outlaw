@@ -13,21 +13,12 @@ public class Player {
         return stats[0];
     }
     
-    public int getDay() {
-        // Days passed
-        return stats[1];
-    }
-    
     public String getName() {
         return name;
     }
     
     public void setKilled(int killed) {
         stats[0] = killed;
-    }
-    
-    public void setDays(int days) {
-        stats[1] = days;
     }
     
     public void setName(String inname) {
@@ -38,7 +29,7 @@ public class Player {
          */
         name = inname;
         if ( inname == null || inname == "" ) {
-            name = "Jo";
+            name = "Marvin Catalon";
         }
     }
     
