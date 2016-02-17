@@ -24,7 +24,9 @@ public class Story {
         Delay(2000);
         Question();
         Delay(2000);
-        System.out.println("\nLet start!");
+        System.out.println("\nYou will play as the Sheriff. "
+                + "\nYour role is to walk around the town, find out 3 outlaws."
+                + "\nLet start! ");
         
         while(!dead && !done) {
             String location = map.mapMenu();

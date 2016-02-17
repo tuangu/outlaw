@@ -1,7 +1,7 @@
 package outlaw;
 
 public class Player {
-    private String name;
+    private String name = "Marvin Catalon";
     private int[] stats = new int[2]; // stats[0] = killed outlaw
     
     public Player() {

@@ -9,11 +9,11 @@ public class main {
         Scanner input = new Scanner(System.in);
         String username;
         
-        System.out.print("Please enter the Sheriff's name: ");
-        username = input.nextLine();
+        //System.out.print("Please enter the Sheriff's name: ");
+        //username = input.nextLine();
         
         Player user = new Player();
-        user.setName(username);
+        //user.setName(username);
         Story storyline = new Story(user);
     }
     
