@@ -2,7 +2,7 @@ package Character;
 
 import java.util.HashMap;
 
-public class Vice {
+public class Suzy {
     
     public boolean dead;
     public boolean done;
@@ -15,7 +15,7 @@ public class Vice {
     private String[] answer;
     
     
-    public Vice() {
+    public Suzy() {
         this.dead = false;
         this.done = false;
         this.talked = 0;
@@ -25,27 +25,27 @@ public class Vice {
             "hometown", 
             "why_come",
             "last_night", 
-            "check_gun", 
-            "why_gun", 
-            "bullets"};
+            "show_name",
+            "why_gun",
+            "check_gun" };
         this.instruction = new String[]{
             "name", 
             "purpose", 
             "hometown", 
             "why_come", 
             "last_night", 
-            "check_gun", 
+            "show_name",
             "why_gun",
-            "bullets"};
+            "check_gun" };
         this.answer = new String[]{
-            "Marvin Catalon", 
-            "Just sitting and having a drink.", 
-            "My hometown is quite far from here, about 160km away from the north.", 
-            "I'm on vacation.", 
-            "I was wandering around the town, enjoyed the silent of the night. Suddenly, I saw somebody rushing, then I followed them.", 
-            "Of course.",
-            "I need it. It’s for my job.", 
-            "I have used 1. That’s it."};
+            "Suzy Laffazet", 
+            "I’m a businessman. I’m here to buy some stuff.", 
+            "My hometown is about 30km away from the south.", 
+            "As I mention above, I’m a businessman. I’m here to do my business. ", 
+            "I was just stay at home and watch a TV show. ", 
+            "I forgot the name because I fall asleep quite shortly after that. ",
+            "I just bring it with me to protect myself.",
+            "Sure." };
         
         for (int i = 0; i < this.command.length; i++) {
             instructions.put(this.command[i], this.instruction[i]);
@@ -54,15 +54,16 @@ public class Vice {
         
     }
     
-    public void startVice() {
+    public void startSuzy() {
         if ( this.talked != 0 ) {
-            System.out.println("\nYou are back in the tarven.\n");
+            System.out.println("\nYou are back in the motel.");
+            System.out.println("Suzy is waiting for you.\n");
         }
         
         while (!this.dead && !this.done) {
             if (this.talked == 0) {
-                System.out.println("You are in the TARVEN. It's very crowded. There is a man in your suspect list here.");
-                System.out.println("You decide to talk with that man and ask him some questions in your question list.\n");
+                System.out.println("You come to a motel in town, where one of the suspect is staying");
+                System.out.println("You knock on her room’s door and a women open the door. You start to question her.\n");
             }
             
             System.out.println(this.instruction[this.talked]);
@@ -77,12 +78,12 @@ public class Vice {
             }
                 
             if (parsed.equals("leave")) {
-                System.out.println("You've left the tarven.");
+                System.out.println("You've left the motel.");
                 break;
             }
             if (parsed.equals("kill")) {
                 this.dead = true;
-                System.out.println("You've killed " + this.answer[0] + " . He is a vice Sheriff.");
+                System.out.println("You've killed " + this.answer[0] + " . She is an outlaw. Congrats!");
                 break;
             }
             if (parsed.equals(this.command[this.talked])) {
@@ -98,14 +99,14 @@ public class Vice {
         while (!this.dead && this.done) {
             System.out.println("It's time to decide whether to kill or not.");
             System.out.println("If you want to kill " + this.answer[0] +
-                    ", please type `KILL`. If you want to keep him alive, just `LEAVE` the tarven.");
+                    ", please type `KILL`. If you want to keep him alive, just `LEAVE` the motel.");
             String input = this.parser.getInput();
             String parsed = this.parser.parse(input);
             if ( parsed.equals("kill") ) {
                 this.dead = true;
-                System.out.println("You've killed " + this.answer[0] + " . He is a vice Sheriff.");
+                System.out.println("You've killed " + this.answer[0] + " . She is an outlaw. Congrats!");
             } else if ( parsed.equals("leave") ) {
-                System.out.println("You've left the tarven.");
+                System.out.println("You've left the motel.");
                 break;
             }
         }

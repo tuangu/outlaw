@@ -64,9 +64,9 @@ public class Map {
         }
 
         if (n == 0) {
-            return "on street";
+            return "street";
         } else {
-            return "in " + location.get(n);
+            return location.get(n);
         }
     }
 
@@ -152,10 +152,10 @@ public class Map {
         }
 
         where = getLocation(playerLocation[0], playerLocation[1]);
-        // For test only
-        //System.out.println(Arrays.toString(playerLocation));
-        System.out.println(where);
-        // -----
+//        // For test only
+//        //System.out.println(Arrays.toString(playerLocation));
+//        System.out.println(where);
+//        // -----
 
         return where;
     }
