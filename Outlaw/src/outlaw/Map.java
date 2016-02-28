@@ -106,6 +106,7 @@ public class Map {
 
         while (!endWhile) {
             System.out.println("\nWhich direction would you like to go? (Up, Down, Left, Right)");
+            System.out.print("- ");
             String input = scan.nextLine();
             input = input.toLowerCase();
 
@@ -152,18 +153,8 @@ public class Map {
         }
 
         where = getLocation(playerLocation[0], playerLocation[1]);
-//        // For test only
-//        //System.out.println(Arrays.toString(playerLocation));
-//        System.out.println(where);
-//        // -----
 
         return where;
-    }
-
-    // Test map
-    public void printMap() {
-        System.out.println(verifyRoute(3, 4, "down"));
-        System.out.println(verifyRoute(0, 4, "up"));
     }
 
 }

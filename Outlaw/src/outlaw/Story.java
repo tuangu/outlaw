@@ -12,9 +12,6 @@ public class Story {
     private boolean done;
     private int killed;
     HashMap<String, String> mapOutlaw = new HashMap();
-    //Parser parser = new Parser();
-    
-    //Vice vice = new Vice();
     
     public Story(Player user) {
         this.killed = 0;
@@ -37,12 +34,7 @@ public class Story {
                 + "\nHe didn’t know that in 1 of 4 people, there is a vice Sheriff from another town. "
                 + "\nThe vice is tracking the Gangster Band and he also want to kill them. "
                 + "\nHowever, for his safety, he has to hide his role.");
-        Delay(1000);
-//        System.out.println("\nFirstly, the Sheriff thinks about what he will ask that 4 guy to make them reveal themselves. "
-//                + "\nHe started to make a list of questions. He will ask each of them 8 questions as follow:");
-//        Delay(2000);
-//        Question();
-//        Delay(2000);
+        Delay(5000);
         System.out.println("\nYou will play as the Sheriff. "
                 + "\nYour role is to walk around the town, find out 3 outlaws."
                 + "\nLet start! ");
@@ -110,21 +102,6 @@ public class Story {
         mapOutlaw.put("Motel", "Suzy");
         mapOutlaw.put("Market Square", "Billy");
         mapOutlaw.put("South Habour", "Dorin");
-    }
-    
-    private void Question() {
-        System.out.println("\n1. What’s your name?");
-        System.out.println("\n2. What are you doing here?");
-        Delay(1000);
-        System.out.println("\n3.  Is this place your hometown? "
-                + "\nHe pretend that he doesn’t know that guy is from another town so that if they lie, they will reveal themselves");
-        System.out.println("\n4. Why do you come to this town?");
-        Delay(1000);
-        System.out.println("\n5. What were you doing at that time when the robbery happened?");
-        System.out.println("\n6. Is there anybody who witness it?");
-        Delay(1000);
-        System.out.println("\n7. What do you carry that gun for? In case the suspect has a gun.");
-        System.out.println("\n8. Can I check the gun?");
     }
     
     private void Delay(int time) {
