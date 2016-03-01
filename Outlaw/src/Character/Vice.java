@@ -29,14 +29,14 @@ public class Vice {
             "why_gun", 
             "bullets"};
         this.instruction = new String[]{
-            "name", 
-            "purpose", 
-            "hometown", 
-            "why_come", 
-            "last_night", 
-            "check_gun", 
-            "why_gun",
-            "bullets"};
+            "I should find a way to approach him, maybe I should ask “WHAT is his NAME”?", 
+            "What is his purpose? WHAT is he DOING HERE?", 
+            "I need to have more clues to find out who are the gangsters. Maybe I should ask WHERE his HOMETOWN is?", 
+            "WHY does he MOVE to this town?", 
+            "I wonder WHAT he was doing last NIGHT when the robbery happened?", 
+            "I have to check that GUN, it might help me somehow.", 
+            "The Sheriff looks down, he notices that Marvin is carrying a GUN. “Nice GUN.” – the Sheriff said, “I think you don’t need that here.”. WHY does he carry that GUN?",
+            "Oh, it’s so strange, this gun is missing 1 BULLET, why ???"};
         this.answer = new String[]{
             "Marvin Catalon", 
             "Just sitting and having a drink.", 
@@ -56,12 +56,12 @@ public class Vice {
     
     public void startVice() {
         if ( this.talked != 0 ) {
-            System.out.println("\nYou are back in the tarven.\n");
+            System.out.println("\nYou are back in the tarven. Let's continue asking him.\n");
         }
         
         while (!this.dead && !this.done) {
             if (this.talked == 0) {
-                System.out.println("You are in the TARVEN. It's very crowded. There is a man in your suspect list here.");
+                System.out.println("\nYou are in the TARVEN. It's very crowded. There is a man in your suspect list here.");
                 System.out.println("You decide to talk with that man and ask him some questions in your question list.\n");
             }
             
@@ -77,15 +77,16 @@ public class Vice {
             }
                 
             if (parsed.equals("leave")) {
-                System.out.println("You've left the tarven.");
+                System.out.println("\nYou've left the tarven.");
                 break;
             }
             if (parsed.equals("kill")) {
                 this.dead = true;
-                System.out.println("You've killed " + this.answer[0] + " . He is a vice Sheriff.");
+                System.out.println("\nYou've killed " + this.answer[0] + " . He is a vice Sheriff.");
                 break;
             }
             if (parsed.equals(this.command[this.talked])) {
+                System.out.print("a: ");
                 System.out.println(this.answer[this.talked] + "\n");
                 this.talked += 1;
             }
@@ -96,16 +97,16 @@ public class Vice {
         }
         
         while (!this.dead && this.done) {
-            System.out.println("It's time to decide whether to kill or not.");
+            System.out.println("\nIt's time to decide whether to kill or not.");
             System.out.println("If you want to kill " + this.answer[0] +
-                    ", please type `KILL`. If you want to keep him alive, just `LEAVE` the tarven.");
+                    ", please type `KILL`. If you want to keep him alive, just `LEAVE` the tarven.\n");
             String input = this.parser.getInput();
             String parsed = this.parser.parse(input);
             if ( parsed.equals("kill") ) {
                 this.dead = true;
-                System.out.println("You've killed " + this.answer[0] + " . He is a vice Sheriff.");
+                System.out.println("\nYou've killed " + this.answer[0] + " . He is a vice Sheriff.");
             } else if ( parsed.equals("leave") ) {
-                System.out.println("You've left the tarven.");
+                System.out.println("\nYou've left the tarven.");
                 break;
             }
         }

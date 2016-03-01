@@ -41,7 +41,7 @@ public class Parser {
         key.add(purpose_1);
         String[] hometown = {"home", "town"};
         key.add(hometown);
-        String[] why_come = {"why", "come"};
+        String[] why_come = {"why", "move"};
         key.add(why_come);
         String[] why_gun = {"why", "gun"};
         key.add(why_gun);
@@ -53,7 +53,7 @@ public class Parser {
         key.add(robbery);
         String[] last_night_1 = {"what", "time"};
         key.add(last_night_1);
-        String[] show_name = {"what", "name", "show"};
+        String[] show_name = {"show"};
         key.add(show_name);
         String[] check_gun = {"gun"};
         key.add(check_gun);
@@ -110,8 +110,9 @@ public class Parser {
     
     public String getInput() {
         String getInput;
-        System.out.print("- ");
+        System.out.print("q: ");
         getInput = reader.nextLine();
+        System.out.println("");
         
         return getInput;
     }

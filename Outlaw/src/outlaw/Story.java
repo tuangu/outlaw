@@ -36,8 +36,12 @@ public class Story {
                 + "\nHowever, for his safety, he has to hide his role.");
         Delay(5000);
         System.out.println("\nYou will play as the Sheriff. "
-                + "\nYour role is to walk around the town, find out 3 outlaws."
+                + "\nYour role is to walk around the town, find out 3 outlaws. "
+                + "\nYou should think about questions and ask 4 guys to make them reveal themselves. "
+                + "\nTwo command you should remember are KILL and LEAVE. If you think the suspect you are talking to is an outlaw, use KILL command. "
+                + "You can leave the place you entered by using LEAVE."
                 + "\nLet start! ");
+        Delay(1000);
         
         while( !this.dead && !this.done ) {
             String location = map.mapMenu();
@@ -49,7 +53,7 @@ public class Story {
         }
         
         if ( this.done ) {
-            System.out.println("You win.");
+            System.out.println("You win. Congrats!");
         }
         
     }
@@ -87,7 +91,12 @@ public class Story {
                 }
                 leave = true;
             } else {
-                System.out.println("There isn't any outlaw in " + location);
+                if ( location.equals("street") ) {
+                    System.out.println("You are on the street.");
+                } else {
+                    System.out.println("There isn't any suspect in " + location + ".");
+                }
+                
                 leave = true;
             } 
         }
